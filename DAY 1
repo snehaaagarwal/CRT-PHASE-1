@@ -1,1 +1,67 @@
+//program for celsius to farenheit
 
+#include<iostream>
+using namespace std;
+int main(){
+    double celsius;
+    double farenheit;
+    cin>>celsius;
+    farenheit=(celsius*9.0/5.0)+32;
+    cout<<farenheit<<endl;
+}
+
+//program for local and global variable
+
+#include<iostream>
+using namespace std;
+int globalvariable=100;
+int main(){
+    int localvariable;
+    int result;
+    cin>>localvariable;
+    result=(globalvariable/localvariable);
+    cout<<result<<endl;
+    return 0;
+}
+
+//program to check whether given sides of triangle are equilateral or not
+
+#include<iostream>
+using namespace std;
+int main(){
+    int side1,side2,side3;
+    cin>>side1>>side2>>side3;
+    bool isEqu=(side1>0)&&(side1==side2)&&(side2==side3);
+    cout<<isEqu<<endl;
+    return 0;
+}
+
+//program to swap values of two variables
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a,b;
+    cin>>a>>b;
+    int temp=a;
+     a=b;
+     b=temp;
+    cout<<a<<"\n"<<b<<endl;
+    return 0;
+}
+
+//program for login credentials
+
+#include<iostream>
+using namespace std;
+int main(){
+    int userId=1234;
+    int userpass=2345;
+    int inputid;
+    int inputpass;
+    cin>>inputid>>inputpass;
+    bool isgranted=(userId==inputid)&&(userpass==inputpass);
+    cout<<"Access Granted"<<isgranted<<endl;
+    cout<<"Access Denied"<<!isgranted<<endl;
+    return 0;
+}
