@@ -1,0 +1,109 @@
+1.//Print no 1 to 10 using for loop
+
+#include <iostream>
+using namespace std;
+int main(){
+    for(int i=1;i<=10;i++){
+        cout<<i<<" \n";
+  }
+}
+
+2.//Print even no using for loop
+
+#include <iostream>
+using namespace std;
+int main(){
+    for(int i=0;i<=10;i+=2){
+        cout<<i<<" \n";
+    }
+    }
+
+3.//Print no 1 to 10 using while loop
+
+#include <iostream>
+using namespace std;
+int main(){
+    int i=1;
+    while(i<=10){
+        cout<<i<<" ";
+        i++;
+    }
+}
+
+4.//Print no 1 to 10 using do-while loop
+
+#include <iostream>
+using namespace std;
+int main(){
+    int i=1;
+    do{
+        cout<<i<<" ";
+        i++;
+    }while(i<=10);
+}
+
+5.//Print odd no using while loop
+
+#include <iostream>
+using namespace std;
+int main(){
+    int i=1;
+    while(i<=10){
+        cout<<i<<" ";
+        i+=2;
+    }
+}
+
+6.//Print factorial of a no using for loop
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter a no";
+    cin>>n;
+    int fact=1;
+    for(int i=n;i>=1;i--){
+        fact=fact*i;
+    }
+    cout<<fact;
+}
+
+7.//Print prime no using for loop
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter a no";
+    cin>>n;
+    bool prime=true;
+    if(n<2){
+        prime=false;
+    }else{
+    for(int i=2;i<n;i++){
+        if(n%i==0){
+            prime=false;
+            break;
+        }
+    }
+}
+if(prime){
+    cout<<"prime number";
+}else{
+    cout<<"not a prime number";
+  }
+}
+
+8.//Smart phone unlocked
+
+#include <iostream>
+using namespace std;
+int main(){
+    int password;
+    do{
+        cout<<"enter the password";
+        cin>>password;
+    }while(password!=1234);
+    cout<<"phone unlocked";
+}
