@@ -1,0 +1,113 @@
+program1:call by value and call by refrence
+  #include <iostream>
+using namespace std;
+
+void updatebyValue(int a){
+    a = 500;
+}
+
+void updateByRefrence(int &a){
+    a=500;
+}
+
+int main(){
+    int original = 100;
+    updatebyValue(original);
+    cout << original << "\n";
+    updateByRefrence(original);
+    cout << original;
+
+}
+
+problem2: Access specifier
+  #include <iostream>
+using namespace std;
+
+class Bankaccount{
+private:
+    int balance = 5000;
+    
+public:
+void showbalance(){
+    cout << balance;
+    }
+};
+int main() {
+    BankAccount obj1;
+    obj1.showbalance();
+}
+
+problem3: protected access specifier
+  #include <iostream>
+using namespace std;
+
+class Parent {
+protected:
+   int seceretCode = 1234;
+};
+
+class child : public Parent{
+public:
+    void accessLocker(){
+        cout << secretCode;
+    }
+};
+int main() {
+    child obj1;
+    obj1.accessLocker();
+}
+
+problem4: constructor
+  4.1 parameterized constructor
+  #include <iostream>
+using namespace std;
+
+class wifiConnection {
+public:
+   string networkName;
+   int password:
+   
+   wifiConnection() {
+       networkName = "ACT Fibre Net";
+       password = 1234;
+   }
+   
+ void showDetails(){
+     cout << networkName << " " <<password:
+   } 
+ }
+ int main() {
+     wifiConnection obj1;
+     obj1.showDetails();
+}
+
+     
+ }
+
+Problem5: Constructor overloading
+  #include <iostream>
+using namespace std;
+
+class Rectangle {
+public:
+      int lenght:
+      int width;
+      
+      Rectangle() {
+          length = 10;
+          width = 20;
+      }
+      
+void area() {      
+    cout << length *width;
+}
+
+};
+     int main() {
+         Rectangle r1;
+         r1.area();
+         Rectangle r2(5);
+         r2.area();
+       Rectangle r3(5,2);
+         r3.area();
+     }
