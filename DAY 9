@@ -1,0 +1,87 @@
+//program 1 function overloading same function name and paramteres with different classes:
+
+#include<iostream>
+using namespace std;
+class Appliance{
+    public:
+   virtual void turnOn(){
+        cout<<"Appliance is getting turn on"<<"\n";
+    }
+    virtual void work()=0;
+};
+class Fan:public Appliance{
+    void turnOn() override{
+        cout<<"Fan blades are moving slowly"<<"\n";
+    }
+    public:
+    void work() override{
+        cout<<"once fan starts at full speed it gives cool air"<<"\n";
+    }
+};
+class Toaster:public Appliance{
+    public:
+    void work() override{
+        cout<<"Toaster is heating up the breads"<<"\n";
+    }
+};
+int main(){
+    Fan myFan;
+    Appliance *kitchenApp;
+    kitchenApp=&myFan;
+    kitchenApp->turnOn();
+    kitchenApp->work();
+    Toaster myToast;
+    kitchenApp=&myFan;
+    kitchenApp->turnOn();
+    kitchenApp->work();
+}
+
+//program 2 define an array and intialization:
+
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[5];
+    cout<<"enter 5 numbers"<<"\n";
+    for(int i=0;i<5;i++){
+        cin>>arr[i];
+    }
+    cout<<"array elements are:"<<"\n";
+    for(int i=0;i<5;i++){
+        cout<<arr[i]<<" ";
+    }
+}
+
+//program 3 sum of array elements:
+
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[5];
+    int sum=0;
+    cout<<"enter 5 numbers"<<"\n";
+    for(int i=0;i<5;i++){
+        cin>>arr[i];
+        sum=sum+arr[i];
+    }
+    cout<<"sum of array elements are:"<<sum;
+    
+}
+
+//program 4 Linear Search:
+
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[10,20,30,40,50];
+    int searchElement;
+    cout<<"enter element to search";
+    cin>>searchElement;
+    for(int i=0;i<5;i++){
+        if(arr[i]==searchElement){
+            cout<<"element found at index"<<i;
+            return 0;
+        }
+    }
+    cout<<"element not found";
+}
