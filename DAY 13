@@ -1,1 +1,51 @@
+1.// House robber 
 
+class Solution {
+public:
+    int rob(vector<int>& nums) {
+        int prev1 = 0;
+        int prev2 = 0;
+
+        for(int num : nums) {
+            int take = num + prev2;
+            int skip = prev1;
+
+            int curr = max(take, skip);
+
+            prev2 = prev1;
+            prev1 = curr;
+        }
+
+        return prev1;
+    }
+};
+
+2.//Linked List
+
+#include<iostream>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(int new_data){
+        this->data=new_data;
+        this->next=nullptr;
+    }
+};
+void traversal(Node* head){
+    while(head!=nullptr){
+        cout<<head->data<<" ";
+        head=head->next;
+    }
+}
+int main(){
+    Node* head=new Node(10);
+    head->next=new Node(20);
+    head->next->next=new Node(30);
+    head->next->next->next=new Node(40);
+    traversal(head);
+    return 0;
+    
+}
+    
