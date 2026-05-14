@@ -1,0 +1,128 @@
+1.//Insertion in Linked List
+
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int new_data) {
+        this->data = new_data;
+        this->next = nullptr;
+    }
+};
+
+
+Node* head = nullptr;
+
+void insertAtHead(int data) {
+    Node* newNode = new Node(data);
+    newNode->next = head;
+    head = newNode;
+}
+
+void display() {
+    Node* temp = head;
+
+    while (temp != nullptr) {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+
+    cout << "NULL" << endl;
+}
+
+int main() {
+
+    // Creating linked list manually
+    head = new Node(10);
+    head->next = new Node(20);
+    head->next->next = new Node(30);
+    head->next->next->next = new Node(40);
+
+    display();
+
+    
+    insertAtHead(5);
+
+    display();
+
+    return 0;
+}
+
+2.//Deletion in linked list
+
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int new_data) {
+        data = new_data;
+        next = nullptr;
+    }
+};
+
+Node* head = nullptr;
+
+
+void deleteAtTail() {
+
+    
+    if (head == nullptr) {
+        return;
+    }
+
+    
+    if (head->next == nullptr) {
+        delete head;
+        head = nullptr;
+        return;
+    }
+
+    Node* temp = head;
+
+   
+    while (temp->next->next != nullptr) {
+        temp = temp->next;
+    }
+
+    
+    delete temp->next;
+    temp->next = nullptr;
+}
+
+
+void display() {
+    Node* temp = head;
+
+    while (temp != nullptr) {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+
+    cout << "NULL" << endl;
+}
+
+int main() {
+
+    
+    head = new Node(10);
+    head->next = new Node(20);
+    head->next->next = new Node(30);
+    head->next->next->next = new Node(40);
+
+    display();
+
+    deleteAtTail();
+
+    display();
+
+    return 0;
+}
+
